@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height Conversion</title>
+    <style>
+        #contain{
+            position: absolute;
+            height: 600px;
+            width: 460px;
+            border: 13px solid black;
+            left: 30%;
+        }
+        h1{
+            position: absolute;
+            text-align: center;
+            left: 28%
+        }
+        #he1{
+            position: absolute;
+            top: 30%;
+        }
+        #f1{
+            position: absolute;
+            top: -450%;
+            font-size: 40px;
+            left: 20%;
+            padding-left: 50px;
+        }
+        #i1{
+           position: absolute;
+           top: 300%;
+           left: 20%;
+           font-size: 40px;
+           padding-left: 50px;
+        }
+        #calculate{
+            position: absolute;
+            top: 63%;
+            left: 30%;
+            width: 130px;
+            height: 70px ;
+            background-color: rgb(16, 148, 209);
+            color: white;
+            border: 3px solid black;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="contain">
+     <h1>Height Conveter</h1>
+     <span id="he1"><span id="f1">Feet : <input style="width: 230px; height: 20px;"" type="number" id="feet"></span>
+     <br>
+     <span id="i1" >Inches : <input style="width: 230px; height: 20px;" type="number" id="inches"></span></span>
+     <br>
+     <button type="button" id="calculate" onclick="convert()">Calculate</button>
+     <p id="para" style="position: absolute; top: 80%;left: 20%;font-size: 30px;"></p>
+        </div>
+    </div>  
+</body>
+<script>
+    function convert(){
+        let feet  = document.getElementById("feet").value;
+        let inches = document.getElementById("inches").value;
+        let para = document.getElementById("para");
+        let feettocm = parseFloat(feet*30.48+inches*2.54);
+
+        para.innerHTML = "Centimeters - " + feettocm;
+
+        if(!feet||!inches){
+            para.innerHTML = "Pls enter a valid input"
+        }
+
+}
+</script>
+</html>
